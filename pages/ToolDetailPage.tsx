@@ -1,6 +1,7 @@
 
 import React from 'react';
 import type { Tool } from '../types';
+import { Link } from '../components/Link';
 
 interface ToolDetailPageProps {
   tool: Tool;
@@ -61,9 +62,9 @@ export const ToolDetailPage: React.FC<ToolDetailPageProps> = ({ tool }) => {
     return (
         <div className="container mx-auto px-6 py-16 animate-fade-in">
             <div className="text-center mb-16">
-                <a href="/" className="inline-block p-4 rounded-xl bg-gradient-to-br ${tool.color} mb-6 transition-transform duration-300 hover:scale-110">
+                <Link to="/" className={`inline-block p-4 rounded-xl bg-gradient-to-br ${tool.color} mb-6 transition-transform duration-300 hover:scale-110`}>
                     <Icon className="h-12 w-12 text-white" />
-                </a>
+                </Link>
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
                     {tool.name}
                 </h1>
@@ -75,12 +76,12 @@ export const ToolDetailPage: React.FC<ToolDetailPageProps> = ({ tool }) => {
             </div>
 
             <div className="text-center mt-16">
-                <a href="/" className="inline-flex items-center px-8 py-3 font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/50">
+                <Link to="/" className="inline-flex items-center px-8 py-3 font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/50">
                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
                     Quay Lại Trang Chủ
-                </a>
+                </Link>
             </div>
              <style>{`
                 @keyframes animate-fade-in {

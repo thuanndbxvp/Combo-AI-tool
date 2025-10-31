@@ -1,23 +1,10 @@
-
 import React from 'react';
 
 export const Header: React.FC = () => {
   return (
-    <header className="sticky top-0 z-50 bg-gray-900/50 backdrop-blur-md">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/" className="text-2xl font-bold tracking-wider">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-            StudyAI86
-          </span>
-        </a>
-        <nav>
-          <a
-            href="/"
-            className="text-gray-300 hover:text-white transition-colors duration-300 px-4 py-2 rounded-md"
-          >
-            Công Cụ
-          </a>
-        </nav>
+    <header className="sticky top-0 z-50 bg-gray-900/50 backdrop-blur-md h-16">
+      <div className="container mx-auto px-6 h-full flex items-center">
+        {/* Header content removed as requested for a minimalist design. */}
       </div>
     </header>
   );

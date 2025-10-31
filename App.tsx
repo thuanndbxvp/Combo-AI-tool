@@ -1,26 +1,22 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { tools } from './constants';
 import { HomePage } from './pages/HomePage';
-import { ToolDetailPage } from './pages/ToolDetailPage';
+import { Modal } from './components/Modal';
+import type { Tool } from './types';
 
 const App: React.FC = () => {
-  const path = window.location.pathname;
+  const [activeTool, setActiveTool] = useState<Tool | null>(null);
 
-  const renderPage = () => {
-    if (path.startsWith('/tool/')) {
-      const slug = path.split('/')[2];
-      const tool = tools.find(t => t.slug === slug);
-      if (tool) {
-        return <ToolDetailPage tool={tool} />;
-      }
-      // TODO: Add a 404 Not Found page for better UX
-    }
-    
-    // Default to home page for root path or any unhandled paths
-    return <HomePage />;
+  const handleShowDetails = (tool: Tool) => {
+    setActiveTool(tool);
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  };
+
+  const handleCloseDetails = () => {
+    setActiveTool(null);
+    document.body.style.overflow = ''; // Restore background scrolling
   };
 
   return (
@@ -30,10 +26,12 @@ const App: React.FC = () => {
       <Header />
 
       <main className="flex-grow z-10">
-        {renderPage()}
+        <HomePage onShowDetails={handleShowDetails} />
       </main>
 
       <Footer />
+
+      <Modal tool={activeTool} onClose={handleCloseDetails} />
     </div>
   );
 };
