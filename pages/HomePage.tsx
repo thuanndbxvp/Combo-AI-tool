@@ -12,10 +12,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onShowDetails }) => {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-1 pb-1 text-center">
+      <section className="pb-1 text-center">
         <div className="container mx-auto px-6">
           <div className="flex justify-center items-center gap-4 md:gap-6 mb-1">
-            <StudyAI86Logo className="w-16 md:w-20" />
+            <a href="/" aria-label="Tải lại trang chủ">
+              <StudyAI86Logo className="w-16 md:w-20" />
+            </a>
             <h1 className="font-outfit text-4xl md:text-6xl font-extrabold tracking-tight flex flex-wrap items-center justify-center gap-x-3 md:gap-x-4 py-1">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
                 Elevate Your
