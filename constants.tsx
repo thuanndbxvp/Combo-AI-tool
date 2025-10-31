@@ -1,6 +1,9 @@
 
 import React from 'react';
 import type { Tool } from './types';
+import { finderDetails } from './data/finderDetails';
+import { analyzerDetails } from './data/analyzerDetails';
+import { contentDetails } from './data/contentDetails';
 
 const SearchIcon: React.FC<{className?: string}> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -23,24 +26,30 @@ const LightBulbIcon: React.FC<{className?: string}> = ({ className }) => (
 export const tools: Tool[] = [
   {
     id: 'finder',
+    slug: 'niche-finder',
     name: 'Niche Finder',
     description: 'Tìm kiếm và phân tích sâu các thị trường ngách tiềm năng trên YouTube.',
+    details: finderDetails,
     url: 'https://finder.studyai86.online',
     icon: SearchIcon,
     color: 'from-sky-500 to-cyan-400',
   },
   {
     id: 'analyzer',
+    slug: 'channel-analyzer',
     name: 'Channel Analyzer',
     description: 'Phân tích chi tiết bất kỳ kênh YouTube nào để học hỏi chiến lược thành công.',
+    details: analyzerDetails,
     url: 'https://analyzer.studyai86.online',
     icon: ChartBarIcon,
     color: 'from-purple-500 to-indigo-500',
   },
   {
     id: 'content',
+    slug: 'content-creator',
     name: 'Content Creator',
     description: 'Lên ý tưởng và tạo kịch bản video nhanh chóng với sự trợ giúp của AI.',
+    details: contentDetails,
     url: 'https://content.studyai86.online',
     icon: LightBulbIcon,
     color: 'from-amber-500 to-yellow-400',
