@@ -11,10 +11,12 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, onShowDetails }) => {
   const Icon = tool.icon;
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 flex flex-col items-start hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 ease-in-out transform hover:-translate-y-1">
-      <div className={`p-3 rounded-lg bg-gradient-to-br ${tool.color} mb-6`}>
-        <Icon className="h-8 w-8 text-white" />
+      <div className="flex items-center gap-4 mb-4">
+        <div className={`p-3 rounded-lg bg-gradient-to-br ${tool.color}`}>
+          <Icon className="h-8 w-8 text-white" />
+        </div>
+        <h3 className="text-2xl font-bold text-white">{tool.name}</h3>
       </div>
-      <h3 className="text-2xl font-bold mb-3 text-white">{tool.name}</h3>
       <p className="text-gray-400 mb-6 flex-grow">{tool.description}</p>
       <div className="flex flex-col sm:flex-row gap-4 w-full mt-auto">
         <button
