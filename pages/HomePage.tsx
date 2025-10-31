@@ -50,9 +50,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onShowDetails }) => {
       </section>
 
       {/* Tools Section */}
-      <section id="tools" className="pt-1 pb-16">
+      <section id="tools" className="pt-8 pb-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-4">Bộ Công Cụ Của Chúng Tôi</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {tools.map((tool: Tool) => (
               <ToolCard key={tool.id} tool={tool} onShowDetails={onShowDetails} />
