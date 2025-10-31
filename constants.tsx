@@ -4,6 +4,7 @@ import type { Tool } from './types';
 import { finderDetails } from './data/finderDetails';
 import { analyzerDetails } from './data/analyzerDetails';
 import { contentDetails } from './data/contentDetails';
+import { ttsDetails } from './data/ttsDetails';
 
 const SearchIcon: React.FC<{className?: string}> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -20,6 +21,12 @@ const ChartBarIcon: React.FC<{className?: string}> = ({ className }) => (
 const LightBulbIcon: React.FC<{className?: string}> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707.707M12 21v-1m0-16a8 8 0 100 16 8 8 0 000-16z" />
+  </svg>
+);
+
+const SpeakerWaveIcon: React.FC<{className?: string}> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
   </svg>
 );
 
@@ -53,5 +60,15 @@ export const tools: Tool[] = [
     url: 'https://content.studyai86.online',
     icon: LightBulbIcon,
     color: 'from-amber-500 to-yellow-400',
+  },
+  {
+    id: 'tts',
+    slug: 'text-to-speech',
+    name: 'Text to Speech Converter',
+    description: 'Chuyển đổi văn bản hoặc tệp .txt thành giọng nói chất lượng cao với nhiều tùy chọn giọng đọc.',
+    details: ttsDetails,
+    url: 'https://tts.studyai86.online',
+    icon: SpeakerWaveIcon,
+    color: 'from-green-500 to-teal-400',
   },
 ];
