@@ -67,7 +67,7 @@ export const tools: Tool[] = [
     name: 'Text to Speech Converter',
     description: 'Chuyển đổi văn bản hoặc tệp .txt thành giọng nói chất lượng cao với nhiều tùy chọn giọng đọc.',
     details: ttsDetails,
-    url: 'https://tts.studyai86.online',
+    url: 'https://tts.studyai.click/',
     icon: SpeakerWaveIcon,
     color: 'from-green-500 to-teal-400',
   },
