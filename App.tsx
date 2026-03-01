@@ -4,6 +4,8 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { Modal } from './components/Modal';
+import { PromoModal } from './components/PromoModal';
+import { PromoNotification } from './components/PromoNotification';
 import type { Tool } from './types';
 
 const App: React.FC = () => {
@@ -20,7 +22,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 flex flex-col">
+    <div className="min-h-screen bg-gray-900 text-gray-100 flex flex-col relative">
       <div className="absolute top-0 left-0 w-full h-full bg-grid-white/[0.05] [mask-image:linear-gradient(to_bottom,white_5%,transparent_100%)]"></div>
       
       <Header />
@@ -32,6 +34,9 @@ const App: React.FC = () => {
       <Footer />
 
       <Modal tool={activeTool} onClose={handleCloseDetails} />
+      
+      <PromoModal />
+      <PromoNotification />
     </div>
   );
 };
